@@ -1,0 +1,96 @@
+package com.demo.bean;
+
+import java.io.Serializable;
+
+/**
+ * user_role
+ * 
+ * @author
+ */
+public class UserRole implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	private Integer id;
+
+	private Integer uId;
+
+	private Integer rId;
+
+	private User users;
+
+	private Role roles;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getuId() {
+		return uId;
+	}
+
+	public void setuId(Integer uId) {
+		this.uId = uId;
+	}
+
+	public Integer getrId() {
+		return rId;
+	}
+
+	public void setrId(Integer rId) {
+		this.rId = rId;
+	}
+
+	public User getUsers() {
+		return users;
+	}
+
+	public Role getRoles() {
+		return roles;
+	}
+
+	public void setUsers(User users) {
+		this.users = users;
+	}
+
+	public void setRoles(Role roles) {
+		this.roles = roles;
+	}
+
+	@Override
+	public boolean equals(Object that) {
+		if (this == that) {
+			return true;
+		}
+		if (that == null) {
+			return false;
+		}
+		if (getClass() != that.getClass()) {
+			return false;
+		}
+		UserRole other = (UserRole) that;
+		return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+				&& (this.getuId() == null ? other.getuId() == null : this.getuId().equals(other.getuId()))
+				&& (this.getrId() == null ? other.getrId() == null : this.getrId().equals(other.getrId()));
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+		result = prime * result + ((getuId() == null) ? 0 : getuId().hashCode());
+		result = prime * result + ((getrId() == null) ? 0 : getrId().hashCode());
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "UserRole [id=" + id + ", uId=" + uId + ", rId=" + rId + ", users=" + users + ", roles=" + roles + "]";
+	}
+
+}
